@@ -1,1 +1,1 @@
-print("Renan Joaquim travesti")
+print("Seu otario")
