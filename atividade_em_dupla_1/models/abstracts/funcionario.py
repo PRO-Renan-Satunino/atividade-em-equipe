@@ -1,4 +1,4 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 from models.endereco import Endereco
 
 class Funcionario(ABC):
@@ -7,6 +7,10 @@ class Funcionario(ABC):
         self.telefone = telefone
         self.email = email
         self.endereco = endereco
+
+        @abstractmethod
+        def salario_final(self) -> float:
+            pass
 
     def __str__(self) -> str:
         return (
