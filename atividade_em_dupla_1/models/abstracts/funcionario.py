@@ -2,15 +2,16 @@ from abc import ABC, abstractmethod
 from models.endereco import Endereco
 
 class Funcionario(ABC):
-    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
+    def __init__(self, nome: str, telefone: str, email: str, endereco: Endereco, salario: float) -> None:
         self.nome = nome
         self.telefone = telefone
         self.email = email
         self.endereco = endereco
+        self.salario = salario
 
-        @abstractmethod
-        def salario_final(self) -> float:
-            pass
+    @abstractmethod
+    def salario_final(self) -> float:
+        pass
 
     def __str__(self) -> str:
         return (
@@ -18,4 +19,5 @@ class Funcionario(ABC):
             f"\nTelefone: {self.telefone}"
             f"\nEmail: {self.email}"
             f"\n\n--Endereço--{self.endereco}"
+            f"\nSalario: {self.salario_final()}"
         )
